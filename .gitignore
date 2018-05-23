@@ -60,3 +60,8 @@ venv.bak/
 .ropeproject
 /site
 .mypy_cache/
+.DS_Store
+.idea/
+example-project/.DS_Store
+src/.DS_Store
+src/scrapy_redis_cluster/.DS_Store

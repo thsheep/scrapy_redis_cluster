@@ -6,7 +6,7 @@
 
 2. 添加了Redis集群支持
 
-**原项目：[scrpy-reids](https://github.com/rmax/scrapy-redis)**
+**原项目：[scrpy-redis](https://github.com/rmax/scrapy-redis)**
 
 配置示例：
 
