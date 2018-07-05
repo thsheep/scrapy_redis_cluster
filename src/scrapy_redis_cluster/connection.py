@@ -60,8 +60,15 @@ def get_redis_from_settings(settings):
     return get_redis(**params)
 
 
-# Backwards compatible alias.
-from_settings = get_redis_from_settings
+def from_settings(settings):
+    """
+    根据settings中的配置来决定返回集群还是单机连接方式
+    :param settings:
+    :return:
+    """
+    if "REDIS_MASTER_NODES" in settings or 'REDIS_CLUSTER_URL' in settings:
+        return get_redis_cluster_from_settings(settings)
+    return get_redis_from_settings(settings)
 
 
 def get_redis(**kwargs):
@@ -110,10 +117,6 @@ def get_redis_cluster_from_settings(settings):
             params[dest] = val
 
     return get_redis_cluster(**params)
-
-
-# 集群配置连接
-redis_cluster_from_settings = get_redis_cluster_from_settings
 
 
 def get_redis_cluster(**kwargs):

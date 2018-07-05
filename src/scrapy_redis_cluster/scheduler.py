@@ -120,11 +120,8 @@ class Scheduler(object):
         # Support serializer as a path to a module.
         if isinstance(kwargs.get('serializer'), six.string_types):
             kwargs['serializer'] = importlib.import_module(kwargs['serializer'])
-        if settings.get('REDIS_MASTER_NODES'):
-            server = connection.redis_cluster_from_settings(settings)
-        else:
-            server = connection.from_settings(settings)
-            # Ensure the connection is working.
+        server = connection.from_settings(settings)
+        if not settings.get('REDIS_MASTER_NODES', False):
             server.ping()
 
         return cls(server=server, **kwargs)
