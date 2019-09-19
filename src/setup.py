@@ -8,7 +8,7 @@ setup(
     license='MIT',
     author='thsheep',
     author_email='thsheep@thsheep.com',
-    description='scrapy-redis的集群版',
+    description='scrapy-redis cluster',
     keywords='scrapy_redis_cluster',
     install_requires=[
         'Scrapy>=1.0',
