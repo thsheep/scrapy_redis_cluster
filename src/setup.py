@@ -12,7 +12,7 @@ setup(
     keywords='scrapy_redis_cluster',
     install_requires=[
         'Scrapy>=1.0',
-        'redis==2.10',
+        'redis==4.4.4',
         'six==1.5.2',
         'redis-py-cluster==1.3.6',
     ],
